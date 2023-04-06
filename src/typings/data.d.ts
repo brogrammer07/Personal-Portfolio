@@ -4,6 +4,7 @@ export type sidebar = {
     title: string;
     id: string;
   }[];
+  links: { type: "github" | "linkedin" | "instagram"; link: string }[];
 };
 export type main = {
   firstLine: string;
@@ -11,12 +12,19 @@ export type main = {
   thirdLine: string;
   subHeading: string;
 };
-
-export type mySkills = {
+export type projects = {
   number: string;
   title: string;
-  skills: { skill: string; progress: number; color: string }[];
-  words: string[];
+  desc: string;
+  projectList: {
+    link: string;
+    img: string;
+  }[];
+};
+export type about = {
+  number: string;
+  title: string;
+  desc: string;
 };
 
 export type work = {
@@ -28,4 +36,17 @@ export type work = {
     date: string;
     description: string[];
   }[];
+};
+
+export type mySkills = {
+  number: string;
+  title: string;
+  desc: string;
+  skills: { skill: string; progress: number; color: string }[];
+  words: string[];
+};
+export type contact = {
+  number: string;
+  title: string;
+  desc: string;
 };

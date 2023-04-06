@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from "react";
 import { mainData } from "../assets/data";
 import { motion } from "framer-motion";
 const Main = () => {
-  const [firstLine, setFirstLine] = useState<string[]>();
-  const [secondLine, setSecondLine] = useState<string[]>();
-  const [thirdLine, setThirdLine] = useState<string[]>();
-  useEffect(() => {
-    let temp1 = [...mainData.firstLine];
-    console.log(temp1);
-    setFirstLine(temp1);
-    let temp2 = [...mainData.secondLine];
-    setSecondLine(temp2);
-    let temp3 = [...mainData.thirdLine];
-    setThirdLine(temp3);
-  }, []);
-
   return (
-    <div className="flex flex-col w-[98%] mx-auto h-screen mt-10 ">
+    <div id="" className="flex flex-col w-[98%] mx-auto h-screen mt-10 ">
       <div className="my-1">
         <h6>&lt;h1&gt;</h6>
         <div className="flex flex-col w-[98%] mx-auto">
           <div className="flex text-[85px] leading-[5rem] tracking-tight font-[900] text-white">
-            {firstLine?.map((letter, idx) => (
+            {mainData.firstLine.split("").map((letter, idx) => (
               <motion.h1
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: [1, 1.2, 1],
+                  transition: {
+                    // type: "spring",
+                    stiffness: 300,
+                    delay: idx * 0.1,
+                  },
+                }}
                 whileHover={{
                   color: "#5DECCC",
                   scaleY: [1, 0.9, 0.8, 0.7, 1.3, 1],
@@ -41,8 +39,8 @@ const Main = () => {
             ))}
           </div>
           <div className="flex text-[85px] leading-[5rem] tracking-tight font-[900] text-white ">
-            {secondLine?.map((letter, idx) => (
-              <>
+            {mainData.secondLine.split("").map((letter, idx) => (
+              <div key={idx}>
                 {letter === "-" ? (
                   <h1 className="" key={idx}>
                     &nbsp;
@@ -57,15 +55,27 @@ const Main = () => {
                           }
                         : {}
                     }
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: [1, 1.2, 1],
+                      transition: {
+                        // type: "spring",
+                        stiffness: 300,
+                        delay: (idx + 3) * 0.1,
+                      },
+                    }}
                     whileHover={{
                       color: letter === "T" ? "#fd2155" : "#5DECCC",
                       scaleY: [1, 0.9, 0.8, 0.7, 1.3, 1],
                       scaleX: [1, 1.1, 1.2, 1.3, 0.7, 1],
-                    }}
-                    transition={{
-                      stiffness: 500,
-                      damping: 30,
-                      duration: 0.5,
+                      transition: {
+                        stiffness: 500,
+                        damping: 30,
+                        duration: 0.5,
+                      },
                     }}
                     className=""
                     key={idx}
@@ -73,27 +83,39 @@ const Main = () => {
                     {letter}
                   </motion.h1>
                 )}
-              </>
+              </div>
             ))}
           </div>
           <div className="flex text-[85px] leading-[7rem] tracking-tight font-[900] text-white">
-            {thirdLine?.map((letter, idx) => (
-              <>
+            {mainData.thirdLine.split("")?.map((letter, idx) => (
+              <div key={idx}>
                 {letter === "-" ? (
                   <h1 className="" key={idx}>
                     &nbsp;
                   </h1>
                 ) : (
                   <motion.h1
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: [1, 1.2, 1],
+                      transition: {
+                        // type: "spring",
+                        stiffness: 300,
+                        delay: (idx + 12) * 0.1,
+                      },
+                    }}
                     whileHover={{
                       color: "#5DECCC",
                       scaleY: [1, 0.9, 0.8, 0.7, 1.3, 1],
                       scaleX: [1, 1.1, 1.2, 1.3, 0.7, 1],
-                    }}
-                    transition={{
-                      stiffness: 500,
-                      damping: 30,
-                      duration: 0.5,
+                      transition: {
+                        stiffness: 500,
+                        damping: 30,
+                        duration: 0.5,
+                      },
                     }}
                     className=""
                     key={idx}
@@ -101,23 +123,49 @@ const Main = () => {
                     {letter}
                   </motion.h1>
                 )}
-              </>
+              </div>
             ))}
           </div>
         </div>
         <h6>&lt;/h1&gt;</h6>
       </div>
-      <div className="my-1">
+      <motion.div
+        initial={{ opacity: 0, translateY: "40%" }}
+        animate={{
+          opacity: 1,
+          translateY: "0",
+          transition: {
+            delay: 0.8,
+            duration: 0.5,
+          },
+        }}
+        className="my-1"
+      >
         <h6>&lt;p&gt;</h6>
         <div className="flex flex-col w-[98%] mx-auto">
-          <h1 className="text-primarySidebar text-[20px] tracking-[0.2rem]">
+          <h1 className="text-primaryLight text-[20px] tracking-[0.2rem]">
             {mainData.subHeading}
           </h1>
         </div>
         <h6>&lt;/p&gt;</h6>
-      </div>
+      </motion.div>
       <div className="ml-[30px] mt-10 ">
-        <button className="buttonFlow">Contact me!</button>
+        <a href="#contact">
+          <motion.button
+            initial={{ opacity: 0, translateY: "40%" }}
+            animate={{
+              opacity: 1,
+              translateY: "0",
+              transition: {
+                delay: 1.2,
+                duration: 0.4,
+              },
+            }}
+            className="buttonFlow"
+          >
+            Contact me!
+          </motion.button>
+        </a>
       </div>
     </div>
   );

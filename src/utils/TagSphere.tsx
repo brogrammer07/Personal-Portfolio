@@ -6,6 +6,9 @@ const TagSphere = () => {
   useEffect(() => {
     TagCloud(".tagcloud", myTags, {
       radius: 330,
+
+      maxSpeed: "fast",
+      initSpeed: "fast",
       itemClass: "text-secondary text-2xl font-bold ",
     });
   }, [myTags]);

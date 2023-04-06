@@ -25,17 +25,18 @@ const SkillsProgressBar = ({
   // }, [index, progress]);
 
   return (
-    <div className={`w-[20rem] h-[4px] bg-[#012E3D]`}>
+    <div className={`w-[100%] h-[4px] bg-[#012E3D]`}>
       <motion.div
         initial={{ width: 0 }}
         whileInView={{
           width: `${progress}%`,
           transition: { duration: 0.5, delay: index * 0.2 },
         }}
+        // viewport={{ once: true }}
         style={{
           backgroundColor: color,
         }}
-        className="h-[4px]"
+        className="h-[2px]"
       ></motion.div>
     </div>
   );

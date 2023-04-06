@@ -3,6 +3,9 @@ import Main from "./Main";
 import MySkills from "./MySkills";
 import Work from "./Work";
 import { motion } from "framer-motion";
+import Projects from "./Projects";
+import About from "./About";
+import Contact from "./Contact";
 
 const Body = () => {
   return (
@@ -35,8 +38,11 @@ const Body = () => {
         <div className="flex flex-col w-[98%] mx-auto">
           <h6>&lt;body&gt;</h6>
           <Main />
-          <MySkills />
+          <Projects />
+          <About />
           <Work />
+          <MySkills />
+          <Contact />
           <h6>&lt;/body&gt;</h6>
         </div>
         <h6>&lt;/html&gt;</h6>

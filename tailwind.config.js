@@ -5,21 +5,16 @@ module.exports = {
     extend: {
       textColor: {
         primary: "#CCD7F7",
-        primaryDark: "#B8C3E1",
-        primaryDarker: "#8892B0",
-        primarySubHeading: "#5D6576",
-        primaryHeading: "#BFC9E8",
-        primarySub: "#858B9F",
-        primaryDetails: "#A4ADC8",
         secondary: "#08fdd8",
-        primarySidebar: "#909096",
-        primarySidebarHover: "#ffffff",
-        htmlCode: "#3B3F45",
+        primaryLight: "#909096",
+        inputBox: "#8d8d8d",
       },
     },
     backgroundColor: {
       primary: "#1d1d1d",
       primaryLight: "#181818",
+      secondary: "#08fdd8",
+      inputBox: "#2b2b2b",
     },
     fontFamily: {
       laBelleAurore: ["La Belle Aurore", "cursive"],
