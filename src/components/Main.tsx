@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 const Main = () => {
   return (
     <div id="" className="flex flex-col w-[98%] mx-auto h-screen mt-10 ">
-      <div className="my-1">
+      <div className="my-1 mt-[6rem] lg:mt-0">
         <h6>&lt;h1&gt;</h6>
         <div className="flex flex-col w-[98%] mx-auto">
-          <div className="flex text-[85px] leading-[5rem] tracking-tight font-[900] text-white">
+          <div className="flex text-[45px] md:text-[85px] leading-[3rem] md:leading-[5rem] tracking-tight font-[900] text-white">
             {mainData.firstLine.split("").map((letter, idx) => (
               <motion.h1
                 initial={{
@@ -38,7 +38,7 @@ const Main = () => {
               </motion.h1>
             ))}
           </div>
-          <div className="flex text-[85px] leading-[5rem] tracking-tight font-[900] text-white ">
+          <div className="flex text-[45px] md:text-[85px] leading-[3rem] md:leading-[5rem] tracking-tight font-[900] text-white ">
             {mainData.secondLine.split("").map((letter, idx) => (
               <div key={idx}>
                 {letter === "-" ? (
@@ -86,7 +86,7 @@ const Main = () => {
               </div>
             ))}
           </div>
-          <div className="flex text-[85px] leading-[7rem] tracking-tight font-[900] text-white">
+          <div className="flex text-[45px] md:text-[85px] leading-[4rem] md:leading-[7rem] tracking-tight font-[900] text-white">
             {mainData.thirdLine.split("")?.map((letter, idx) => (
               <div key={idx}>
                 {letter === "-" ? (
@@ -143,13 +143,13 @@ const Main = () => {
       >
         <h6>&lt;p&gt;</h6>
         <div className="flex flex-col w-[98%] mx-auto">
-          <h1 className="text-primaryLight text-[20px] tracking-[0.2rem]">
+          <h1 className="text-primaryLight text-[16px] md:text-[20px] tracking-[0.2rem]">
             {mainData.subHeading}
           </h1>
         </div>
         <h6>&lt;/p&gt;</h6>
       </motion.div>
-      <div className="ml-[30px] mt-10 ">
+      <div className="ml-[10px] lg:ml-[30px] mt-10 ">
         <a href="#contact">
           <motion.button
             initial={{ opacity: 0, translateY: "40%" }}
@@ -161,7 +161,7 @@ const Main = () => {
                 duration: 0.4,
               },
             }}
-            className="buttonFlow"
+            className="buttonFlow "
           >
             Contact me!
           </motion.button>

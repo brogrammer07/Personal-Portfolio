@@ -13,7 +13,7 @@ const Project = ({ link, img, idx }: ProjectProps) => {
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
       key={idx}
-      className={`relative w-full  h-[17rem] cursor-pointer overflow-hidden  `}
+      className={`relative w-full h-[11rem] md:h-[14rem] lg:h-[17rem] cursor-pointer overflow-hidden  `}
     >
       <div
         className={`absolute top-0 left-0 w-full h-full z-[4] flex items-center justify-center ${
@@ -58,7 +58,7 @@ const Projects = () => {
           <div className="z-[10]">
             <h6>&lt;h2&gt;</h6>
             <div className="flex flex-col w-[98%] mx-auto">
-              <div className="flex items-center text-[65px] font-extrabold">
+              <div className="flex items-center text-[40px] md:text-[65px] font-extrabold">
                 <>
                   {projectsData.number?.split("").map((letter, idx) => (
                     <motion.h2
@@ -130,8 +130,8 @@ const Projects = () => {
           </div>
           <div className="z-[10]">
             <h6>&lt;p&gt;</h6>
-            <div className="flex flex-col w-[98%] mx-auto">
-              <p className="text-white w-[70%] text-base">
+            <div className="flex flex-col w-[91%] lg:w-[98%] mx-auto">
+              <p className="text-white w-full lg:w-[70%] text-base">
                 {projectsData.desc}
               </p>
             </div>
@@ -142,7 +142,7 @@ const Projects = () => {
       </div>
       <div className="flex flex-col w-[98%] mx-auto space-y-3">
         <h6>&lt;section&gt;</h6>
-        <div className="grid grid-cols-4 ">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {projectsData.projectList.map((project, idx) => (
             <div key={idx} className="">
               <Project link={project.link} img={project.img} idx={idx} />

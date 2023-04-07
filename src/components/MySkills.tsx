@@ -15,7 +15,7 @@ const MySkills = () => {
         <div className="">
           <h6>&lt;h2&gt;</h6>
           <div className="flex flex-col w-[98%] mx-auto">
-            <div className="flex items-center text-[65px] font-extrabold">
+            <div className="flex items-center text-[45px] md:text-[65px] font-extrabold">
               <>
                 {mySkillsData.number?.split("").map((letter, idx) => (
                   <motion.h2
@@ -85,8 +85,8 @@ const MySkills = () => {
           </div>
           <h6>&lt;/h2&gt;</h6>
         </div>
-        <div className="flex">
-          <div className="flex-[0.55]">
+        <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0">
+          <div className="lg:flex-[0.55]">
             <h6>&lt;p&gt;</h6>
             <p className="flex flex-col w-[96%] mx-auto">
               {parse(mySkillsData.desc)}
@@ -94,7 +94,7 @@ const MySkills = () => {
 
             <h6>&lt;/p&gt;</h6>
           </div>
-          <div className="space-y-7 flex-[0.45]">
+          <div className="space-y-7 lg:flex-[0.45]">
             {mySkillsData.skills.map((skill, idx) => (
               <motion.div
                 initial={{ opacity: 0, translateX: "-10%" }}

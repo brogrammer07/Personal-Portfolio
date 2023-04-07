@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import parse from "html-react-parser";
 const About = () => {
   return (
-    <div id="about" className="grid grid-cols-2 pr-16">
+    <div id="about" className="flex flex-col lg:grid lg:grid-cols-2 lg:pr-16">
       <div className="flex flex-col w-[98%] mx-auto space-y-3 self-center">
         <h6>&lt;div&gt;</h6>
         <div className="flex flex-col w-[98%] mx-auto space-y-4">
           <div className="">
             <h6>&lt;h2&gt;</h6>
-            <div className="flex flex-col w-[93%] mx-auto">
-              <div className="flex items-center text-[65px] font-extrabold">
+            <div className="flex flex-col w-[98%] mx-auto">
+              <div className="flex items-center text-[40px] md:text-[65px] font-extrabold">
                 <>
                   {aboutData.number?.split("").map((letter, idx) => (
                     <motion.h2
@@ -83,7 +83,7 @@ const About = () => {
           </div>
           <div className="">
             <h6>&lt;p&gt;</h6>
-            <div className="flex flex-col w-[90%] mx-auto">
+            <div className="flex flex-col w-full lg:w-[90%] mx-auto">
               {parse(aboutData.desc)}
             </div>
             <h6>&lt;/p&gt;</h6>
